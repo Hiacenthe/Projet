@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .title {
   font-family: "Shrikhand", cursive;
 }
@@ -16,19 +17,25 @@
 .flexbetween {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.paddfrancaise {
+  padding: 10px 15px;
 }
 
 @media screen and (max-width: 768px) {
+  /*Page d'accueil*/
   body {
     margin: 0px;
   }
-  /*header */
+  /*Header*/
   .header {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .header .header_image .logo {
+  .header .header_picture .logo {
     width: 180px;
     margin: 0 10px;
     align-items: center;
@@ -78,7 +85,7 @@
     margin-bottom: 60px;
     box-shadow: 0px 0px 10px 0px #A9A9A9;
   }
-  /*main */
+  /*Main */
   .global {
     background-color: #f7f9f9;
     border-radius: 20px;
@@ -208,12 +215,13 @@
     top: 12px;
     right: 12px;
   }
+  /*Footer */
   .footer {
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7607843137);
     color: #f7f9f9;
-    padding: 25px;
+    padding: 20px;
     font-size: 10px;
   }
   .footer .title {
@@ -245,5 +253,92 @@
     margin: 0;
     padding-bottom: 10px;
     font-size: 15px;
+  }
+  /*Restaurant À la française*/
+  /*Header*/
+  .headerfrancaise {
+    display: flex;
+    flex-direction: column;
+  }
+  .headerfrancaise .francaise_logo {
+    margin-top: 10px;
+    padding: 12px 30px;
+  }
+  .headerfrancaise .francaise_logo .logofood {
+    width: 180px;
+    margin-right: 70px;
+    font-size: 8px;
+  }
+  .headerfrancaise .francaise_logo .return {
+    font-size: 20px;
+  }
+  /*Main*/
+  .mainfrancaise {
+    display: flex;
+    flex-direction: column;
+  }
+  .mainfrancaise .francaise_picture {
+    display: flex;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    overflow: hidden;
+  }
+  .mainfrancaise .menu_francaise {
+    background-color: #f7f9f9;
+    margin-top: -45px;
+    border-radius: 50px 50px 0 0;
+  }
+  .mainfrancaise .menu_francaise .title_menu {
+    display: flex;
+    padding: 10px 10px 0 10px;
+  }
+  .mainfrancaise .menu_francaise .title_menu h1 {
+    font-size: 28px;
+  }
+  .mainfrancaise .menu_francaise .title_menu .bloc-icone {
+    padding-right: 18px;
+  }
+  .mainfrancaise .menu_francaise .title_menu .bloc-icone .icone1 {
+    font-size: 26px;
+  }
+  .mainfrancaise .menu_francaise .title_menu .bloc-icone .icone2 {
+    display: none;
+  }
+  .mainfrancaise .menu_francaise .title_menu .bloc-icone:hover .icone2 {
+    display: flex;
+    font-size: 26px;
+    color: transparent;
+    -webkit-background-clip: text;
+            background-clip: text;
+    background-image: linear-gradient(#9356DC, #FF79DA);
+  }
+  .mainfrancaise .menu_francaise .title_menu .bloc-icone:hover .icone1 {
+    display: none;
+  }
+  .mainfrancaise .menu_francaise > p {
+    display: flex;
+    padding-left: 8px;
+  }
+  .mainfrancaise .menu_francaise .menu_entre {
+    background-color: white;
+    border-radius: 15px;
+    padding: 12px;
+    box-shadow: 0px 0px 10px 0px #ddd;
+    margin-bottom: 15px;
+  }
+  .mainfrancaise .menu_francaise .menu_entre .entre-text h2 {
+    margin: 0px;
+    font-size: 18px;
+  }
+  .mainfrancaise .menu_francaise .menu_entre .entre-text p {
+    font-size: 15px;
+    margin: 5px 0 0 0;
+  }
+  .mainfrancaise .menu_francaise .menu_entre > p {
+    font-size: 15px;
+    margin: 0;
+    padding-top: 30px;
+    padding-right: 15px;
   }
 }/*# sourceMappingURL=style.css.map */
