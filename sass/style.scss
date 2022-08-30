@@ -423,15 +423,23 @@ body {
             margin-bottom: 15px;
 
             .entre-text {
-
+                direction: ltr;
+                white-space: nowrap;
+                
                 h2 {
                     margin: 0px;
                     font-size: 18px;
+                    width: 272px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
                 }
 
                 p {
                     font-size: 15px;
+                    width: 272px;
                     margin: 5px 0 0 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
 
@@ -460,4 +468,8 @@ body {
 
 
     }
+}
+
+@media screen and (max-width:992px) {
+    
 }
