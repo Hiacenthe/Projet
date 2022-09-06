@@ -326,17 +326,17 @@ body {
   margin: 0;
 }
 .mainfrancaise .menu_francaise .title_menu .bloc-icone {
-  padding-right: 18px;
+  padding-right: 15px;
 }
 .mainfrancaise .menu_francaise .title_menu .bloc-icone .icone1 {
-  font-size: 26px;
+  font-size: 25px;
 }
 .mainfrancaise .menu_francaise .title_menu .bloc-icone .icone2 {
   display: none;
 }
 .mainfrancaise .menu_francaise .title_menu .bloc-icone:hover .icone2 {
   display: flex;
-  font-size: 26px;
+  font-size: 25px;
   color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
@@ -360,33 +360,51 @@ body {
 .mainfrancaise .menu_francaise .menu_entre {
   background-color: white;
   border-radius: 15px;
-  padding: 12px;
-  box-shadow: 0px 0px 10px 0px #ddd;
+  box-shadow: 0px 2px 10px 3px #ddd;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 .mainfrancaise .menu_francaise .menu_entre .entre-text {
   direction: ltr;
   white-space: nowrap;
+  width: calc(100% - 90px);
+  margin: 12px 0 12px 12px;
+  transition: width 100ms;
 }
 .mainfrancaise .menu_francaise .menu_entre .entre-text h2 {
   margin: 0px;
   font-size: 18px;
-  width: 272px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 .mainfrancaise .menu_francaise .menu_entre .entre-text p {
   font-size: 15px;
-  width: 272px;
   margin: 5px 0 0 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.mainfrancaise .menu_francaise .menu_entre > p {
+.mainfrancaise .menu_francaise .menu_entre .price {
   font-size: 15px;
-  margin: 0;
-  padding-top: 30px;
-  padding-right: 15px;
+  width: 41px;
+  margin: 12px;
+  padding-top: 28px;
+}
+.mainfrancaise .menu_francaise .menu_entre .confirm {
+  display: none;
+  background-color: #99E2D0;
+  height: 70.4px;
+  width: 70px;
+  border-radius: 0 15px 15px 0;
+}
+.mainfrancaise .menu_francaise .menu_entre .confirm .confirm_icon {
+  color: white;
+  font-size: 22px;
+}
+.mainfrancaise .menu_francaise .menu_entre:hover .entre-text {
+  width: calc(100% - 154px);
+}
+.mainfrancaise .menu_francaise .menu_entre:hover .confirm {
+  display: flex;
 }
 .mainfrancaise .menu_francaise .button-order {
   display: flex;
@@ -401,4 +419,8 @@ body {
   height: 55px;
   box-shadow: 0px 0px 10px 0px #A9A9A9;
   margin: 60px 75px 80px;
+  transition: transform 300ms;
+}
+.mainfrancaise .menu_francaise .button-order:hover {
+  transform: scale(1.05);
 }/*# sourceMappingURL=style.css.map */
