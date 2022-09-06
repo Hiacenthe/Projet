@@ -357,53 +357,58 @@ body {
   height: 3px;
   width: 40px;
 }
-.mainfrancaise .menu_francaise .menu_entre {
+.mainfrancaise .menu_francaise .container {
   background-color: white;
   border-radius: 15px;
+  height: 80px;
   box-shadow: 0px 2px 10px 3px #ddd;
   margin-bottom: 15px;
   cursor: pointer;
 }
-.mainfrancaise .menu_francaise .menu_entre .entre-text {
+.mainfrancaise .menu_francaise .container .btn {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+}
+.mainfrancaise .menu_francaise .container .btn .btn_text {
   direction: ltr;
   white-space: nowrap;
-  width: calc(100% - 90px);
-  margin: 12px 0 12px 12px;
+  width: calc(100% - 70px);
   transition: width 100ms;
 }
-.mainfrancaise .menu_francaise .menu_entre .entre-text h2 {
+.mainfrancaise .menu_francaise .container .btn .btn_text h2 {
   margin: 0px;
   font-size: 18px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.mainfrancaise .menu_francaise .menu_entre .entre-text p {
+.mainfrancaise .menu_francaise .container .btn .btn_text p {
   font-size: 15px;
   margin: 5px 0 0 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.mainfrancaise .menu_francaise .menu_entre .price {
+.mainfrancaise .menu_francaise .container .btn .price {
   font-size: 15px;
   width: 41px;
-  margin: 12px;
   padding-top: 28px;
+  margin: 0px;
 }
-.mainfrancaise .menu_francaise .menu_entre .confirm {
+.mainfrancaise .menu_francaise .container .confirm {
   display: none;
   background-color: #99E2D0;
-  height: 70.4px;
+  height: 100%;
   width: 70px;
   border-radius: 0 15px 15px 0;
 }
-.mainfrancaise .menu_francaise .menu_entre .confirm .confirm_icon {
+.mainfrancaise .menu_francaise .container .confirm .confirm_icon {
   color: white;
   font-size: 22px;
 }
-.mainfrancaise .menu_francaise .menu_entre:hover .entre-text {
+.mainfrancaise .menu_francaise .container:hover .entre-text {
   width: calc(100% - 154px);
 }
-.mainfrancaise .menu_francaise .menu_entre:hover .confirm {
+.mainfrancaise .menu_francaise .container:hover .confirm {
   display: flex;
 }
 .mainfrancaise .menu_francaise .button-order {

@@ -415,47 +415,54 @@ body {
         }
 
 
-        .menu_entre {
+        .container {
             background-color: white;
             border-radius: 15px;
+            height: 80px;
             box-shadow: 0px 2px 10px 3px #ddd;
             margin-bottom: 15px;
             cursor: pointer;
-            
 
-            .entre-text {
-                direction: ltr;
-                white-space: nowrap;
-                width: calc(100% - 90px);
-                margin: 12px 0 12px 12px;
-                transition: width 100ms;
+            .btn {
+                width: 100%;
+                height: 100%;
+                padding: 12px;
                 
-                h2 {
-                    margin: 0px;
-                    font-size: 18px;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
+                .btn_text {
+                    direction: ltr;
+                    white-space: nowrap;
+                    width: calc(100% - 70px);
+                    transition: width 100ms;
+                    
+                    h2 {
+                        margin: 0px;
+                        font-size: 18px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+    
+                    p {
+                        font-size: 15px;
+                        margin: 5px 0 0 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
-
-                p {
+    
+                .price {
                     font-size: 15px;
-                    margin: 5px 0 0 0;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                    width: 41px;
+                    padding-top: 28px;
+                    margin: 0px;
                 }
             }
 
-            .price {
-                font-size: 15px;
-                width: 41px;
-                margin: 12px;
-                padding-top: 28px;
-            }
+            
 
             .confirm {
                 display: none;
                 background-color: #99E2D0;
-                height: 70.4px;
+                height: 100%;
                 width: 70px;
                 border-radius: 0 15px 15px 0;
                 
