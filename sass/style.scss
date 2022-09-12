@@ -299,29 +299,24 @@ body {
     }
 }
 
-
-/*Restaurant À la française*/
+/*Pages des differents restaurants*/
 
 /*Header*/
 
-.headerfrancaise {
-    flex-direction: column;
-    .francaise_logo {
-        margin-top: 10px;
-        padding: 12px 30px;
-        
-        .logofood {
-            width: 180px;
-            margin-right: 70px;
-            font-size: 8px;
-        }
+.header_logo {
+    margin-top: 10px;
+    padding: 12px 30px;
 
-        .return {
-            font-size: 20px;
-            color: black;
-        }
+    .return {
+        font-size: 20px;
+        color: black;
     }
-
+    
+    .logofood {
+        width: 180px;
+        margin-right: 70px;
+        font-size: 8px;
+    }
 }
 
 /*Main*/
@@ -368,6 +363,9 @@ body {
         .title_menu {
             display: flex;
             margin: 25px 10px 0 10px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: apparition 0.4s 100ms ease-out forwards;
 
             h1 {
                 font-size: 28px;
@@ -404,6 +402,9 @@ body {
         > p {
             padding-left: 8px;
             margin-top: 30px;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: apparition 0.8s 0.8s ease-out forwards;
             &::after {
                 margin-top: 5px;
                 display: block;
@@ -422,6 +423,7 @@ body {
             box-shadow: 0px 2px 10px 3px #ddd;
             margin-bottom: 15px;
             cursor: pointer;
+            overflow: hidden;
 
             .btn {
                 width: 100%;
@@ -429,12 +431,12 @@ body {
                 padding: 12px;
                 
                 .btn_text {
-                    direction: ltr;
+                    display: block;
                     white-space: nowrap;
                     width: calc(100% - 70px);
-                    transition: width 100ms;
                     
                     h2 {
+                        display: flex;
                         margin: 0px;
                         font-size: 18px;
                         text-overflow: ellipsis;
@@ -451,33 +453,40 @@ body {
     
                 .price {
                     font-size: 15px;
-                    width: 41px;
+                    width: 30px;
                     padding-top: 28px;
-                    margin: 0px;
                 }
             }
 
             
 
             .confirm {
-                display: none;
+                display: flex;
                 background-color: #99E2D0;
+                transition: all 400ms;
                 height: 100%;
                 width: 70px;
-                border-radius: 0 15px 15px 0;
-                
+                margin-right: -70px;
+
                 .confirm_icon {
                     color: white;
                     font-size: 22px;
+                    transition: transform 1s;
                 }
+                
             }
 
             &:hover {
-                .entre-text {
-                    width: calc(100% - 154px);
-                }
+                
                 .confirm {
-                    display: flex;
+                    margin-right: 0px;
+                    transition-duration: 600ms;
+
+                    .confirm_icon {
+                        color: white;
+                        font-size: 22px;
+                        transform: rotate(360deg);
+                    }
                 }
                 
                 
@@ -497,17 +506,55 @@ body {
             height: 55px;
             box-shadow: 0px 0px 10px 0px #A9A9A9;
             margin: 60px 75px 80px;
-            transition: transform 300ms;
+            
 
             &:hover {
                 transform: scale(1.05);
             }
         }
 
-
     }
 }
 
-@media screen and (max-width:992px) {
+.apparition1 {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.8s 0.2s ease-out forwards;
+}
+
+.apparition2 {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.8s 0.4s ease-out forwards;
+}
+
+.apparition3 {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 0.8s 0.6s ease-out forwards;
+}
+
+@keyframes apparition {
+    100% {
+        opacity: 3;
+        transform: none;
+    }
+}
+    
+
+
+/* Ipad */
+@media screen and (min-width:768px){
+
+    /*Header*/
+    .header_logo {
+        
+        .logofood {
+            width: 180px;
+            margin-right: 270px;
+            font-size: 8px;
+        }
+    }
+  
 
 }
