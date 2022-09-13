@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .title {
   font-family: "Shrikhand", cursive;
 }
@@ -26,6 +27,101 @@
 /*Page d'accueil*/
 body {
   margin: 0px;
+  /* Animation du loader */
+}
+body .spinner {
+  /* Création du loader */
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
+  /* Placement du loader au milieu de la page */
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+body .spinner circle {
+  -webkit-animation: color 6s ease-in-out infinite, dash 1.5s ease-in-out infinite;
+          animation: color 6s ease-in-out infinite, dash 1.5s ease-in-out infinite;
+  fill: none;
+  stroke: black;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes color {
+  0% {
+    stroke: #9356DC;
+  }
+  25% {
+    stroke: #99E2D0;
+  }
+  50% {
+    stroke: #FF79DA;
+  }
+  75% {
+    stroke: #2c3e50;
+  }
+}
+@keyframes color {
+  0% {
+    stroke: #9356DC;
+  }
+  25% {
+    stroke: #99E2D0;
+  }
+  50% {
+    stroke: #FF79DA;
+  }
+  75% {
+    stroke: #2c3e50;
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
 }
 
 /*Header*/
@@ -438,6 +534,7 @@ body {
   transform: scale(1.05);
 }
 
+/* Animations des plats des pages menu */
 .apparition1 {
   opacity: 0;
   transform: translateY(-30px);
@@ -457,6 +554,13 @@ body {
   transform: translateY(-30px);
   -webkit-animation: apparition 0.8s 0.6s ease-out forwards;
           animation: apparition 0.8s 0.6s ease-out forwards;
+}
+
+.apparition4 {
+  opacity: 0;
+  transform: translateY(-30px);
+  -webkit-animation: apparition 0.8s 0.8s ease-out forwards;
+          animation: apparition 0.8s 0.8s ease-out forwards;
 }
 
 @-webkit-keyframes apparition {
