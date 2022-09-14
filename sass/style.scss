@@ -31,14 +31,18 @@ body {
 
     .spinner {
         /* Création du loader */
-        width: 100px;
-        height: 100px;
-        animation: spin 1.5s linear infinite;
-    
-        /* Placement du loader au milieu de la page */
         margin: auto;
-        position: absolute;
+        position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
+        background: #ffffff91;
+        z-index: 99;
+        display: flex;
+
+        svg {
+            width: 100px;
+            animation: spin 1.5s linear infinite;
+            margin: auto;
+        }
     }
     
     .spinner circle {
@@ -109,8 +113,8 @@ body {
             margin: 0 10px;
             align-items: center;
             display: flex;
-            padding-top: 30px;
-            padding-bottom: 15px;
+            padding-top: 25px;
+            padding-bottom: 20px;
         }
     }
 
@@ -136,6 +140,7 @@ body {
         background-color: #f7f9f9;
         text-align: center;
         width: 100%;
+        flex: 1;
 
         h1 {
             padding: 0 50px;
@@ -608,9 +613,11 @@ body {
     animation: apparition 0.8s 0.8s ease-out forwards;
 }
 
+
+
 @keyframes apparition {
     100% {
-        opacity: 3;
+        opacity: 1;
         transform: none;
     }
 }

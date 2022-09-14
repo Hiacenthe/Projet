@@ -31,17 +31,21 @@ body {
 }
 body .spinner {
   /* Création du loader */
-  width: 100px;
-  height: 100px;
-  -webkit-animation: spin 1.5s linear infinite;
-          animation: spin 1.5s linear infinite;
-  /* Placement du loader au milieu de la page */
   margin: auto;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  background: rgba(255, 255, 255, 0.568627451);
+  z-index: 99;
+  display: flex;
+}
+body .spinner svg {
+  width: 100px;
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
+  margin: auto;
 }
 body .spinner circle {
   -webkit-animation: color 6s ease-in-out infinite, dash 1.5s ease-in-out infinite;
@@ -135,8 +139,8 @@ body .spinner circle {
   margin: 0 10px;
   align-items: center;
   display: flex;
-  padding-top: 30px;
-  padding-bottom: 15px;
+  padding-top: 25px;
+  padding-bottom: 20px;
 }
 .header .header_locat {
   background-color: #f2f2f2;
@@ -157,6 +161,7 @@ body .spinner circle {
   background-color: #f7f9f9;
   text-align: center;
   width: 100%;
+  flex: 1;
 }
 .header .header_txt h1 {
   padding: 0 50px;
@@ -565,14 +570,14 @@ body .spinner circle {
 
 @-webkit-keyframes apparition {
   100% {
-    opacity: 3;
+    opacity: 1;
     transform: none;
   }
 }
 
 @keyframes apparition {
   100% {
-    opacity: 3;
+    opacity: 1;
     transform: none;
   }
 }
