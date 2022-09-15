@@ -540,28 +540,28 @@ body .spinner circle {
 }
 
 /* Animations des plats des pages menu */
-.apparition1 {
+.apparition-1 {
   opacity: 0;
   transform: translateY(-30px);
   -webkit-animation: apparition 0.8s 0.2s ease-out forwards;
           animation: apparition 0.8s 0.2s ease-out forwards;
 }
 
-.apparition2 {
+.apparition-2 {
   opacity: 0;
   transform: translateY(-30px);
   -webkit-animation: apparition 0.8s 0.4s ease-out forwards;
           animation: apparition 0.8s 0.4s ease-out forwards;
 }
 
-.apparition3 {
+.apparition-3 {
   opacity: 0;
   transform: translateY(-30px);
   -webkit-animation: apparition 0.8s 0.6s ease-out forwards;
           animation: apparition 0.8s 0.6s ease-out forwards;
 }
 
-.apparition4 {
+.apparition-4 {
   opacity: 0;
   transform: translateY(-30px);
   -webkit-animation: apparition 0.8s 0.8s ease-out forwards;
