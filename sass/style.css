@@ -29,7 +29,7 @@ body {
   margin: 0px;
   /* Animation du loader */
 }
-body .spinner {
+body .loading {
   /* Création du loader */
   margin: auto;
   position: fixed;
@@ -40,14 +40,16 @@ body .spinner {
   background: rgba(255, 255, 255, 0.568627451);
   z-index: 99;
   display: flex;
+  -webkit-animation: disappear 2s forwards;
+          animation: disappear 2s forwards;
 }
-body .spinner svg {
+body .loading svg {
   width: 100px;
   -webkit-animation: spin 1.5s linear infinite;
           animation: spin 1.5s linear infinite;
   margin: auto;
 }
-body .spinner circle {
+body .loading circle {
   -webkit-animation: color 6s ease-in-out infinite, dash 1.5s ease-in-out infinite;
           animation: color 6s ease-in-out infinite, dash 1.5s ease-in-out infinite;
   fill: none;
@@ -125,6 +127,20 @@ body .spinner circle {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -124;
+  }
+}
+@-webkit-keyframes disappear {
+  /*disparition du loading*/
+  100% {
+    opacity: 1;
+    visibility: hidden;
+  }
+}
+@keyframes disappear {
+  /*disparition du loading*/
+  100% {
+    opacity: 1;
+    visibility: hidden;
   }
 }
 

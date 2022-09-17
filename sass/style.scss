@@ -29,7 +29,7 @@
 body {
     margin: 0px;
 
-    .spinner {
+    .loading {
         /* Création du loader */
         margin: auto;
         position: fixed;
@@ -37,6 +37,7 @@ body {
         background: #ffffff91;
         z-index: 99;
         display: flex;
+        animation: disappear 2s forwards;
 
         svg {
             width: 100px;
@@ -44,8 +45,10 @@ body {
             margin: auto;
         }
     }
+
+   
     
-    .spinner circle {
+    .loading circle {
         animation:
           color 6s ease-in-out infinite,
           dash 1.5s ease-in-out infinite;
@@ -58,6 +61,7 @@ body {
 
 
     /* Animation du loader */
+    
     
     @keyframes spin {
         from {
@@ -95,6 +99,14 @@ body {
         100% {
             stroke-dasharray: 89,200;
             stroke-dashoffset: -124;
+        }
+    }
+
+    @keyframes disappear {
+        /*disparition du loading*/
+        100% {
+            opacity: 1;
+            visibility: hidden;
         }
     }
     
