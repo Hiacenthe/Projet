@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-.paddfrancaise {
+.main_menu {
   padding: 10px 15px;
 }
 
@@ -28,6 +28,9 @@
 body {
   margin: 0px;
   /* Animation du loader */
+  /*Header*/
+  /*Main */
+  /*Footer */
 }
 body .loading {
   /* Création du loader */
@@ -143,52 +146,52 @@ body .loading circle {
     visibility: hidden;
   }
 }
-
-/*Header*/
-.header {
-  display: flex;
+body header {
+  text-align: center;
+  box-shadow: 0 2px 3px 1px #bdc3c7;
+  margin: 0;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  position: relative;
+}
+body header h1 {
+  margin: 0;
+}
+body main {
   flex-direction: column;
-  align-items: center;
 }
-.header .header_picture .logo {
-  width: 180px;
-  margin: 0 10px;
-  align-items: center;
-  display: flex;
-  padding-top: 25px;
-  padding-bottom: 20px;
-}
-.header .header_locat {
+body main .location {
+  text-align: center;
   background-color: #f2f2f2;
-  box-shadow: 0px 0px 8px 0px #A9A9A9;
-  margin: 0px;
+  margin: 0;
   width: 100%;
-  height: 60px;
+  height: 40px;
 }
-.header .header_locat i {
-  font-size: 20px;
+body main .location i {
+  font-size: 15px;
+  padding-right: 15px;
 }
-.header .header_locat p {
+body main .location p {
   font-weight: 15px;
-  margin-left: 20px;
+  margin-right: 35px;
 }
-.header .header_txt {
+body main .main--txt {
   flex-direction: column;
   background-color: #f7f9f9;
   text-align: center;
   width: 100%;
   flex: 1;
 }
-.header .header_txt h1 {
+body main .main--txt h1 {
   padding: 0 50px;
   font-size: 30px;
   padding-top: 20px;
 }
-.header .header_txt p {
+body main .main--txt p {
   font-size: 20px;
   margin: 0 20px 30px 20px;
 }
-.header .header_txt .button {
+body main .main--txt .button {
   background-image: linear-gradient(#FF79DA, #9356DC);
   color: #f7f9f9;
   border: none;
@@ -199,46 +202,46 @@ body .loading circle {
   border-radius: 2rem;
   font-size: 20px;
   margin-bottom: 60px;
-  box-shadow: 0px 0px 10px 0px #A9A9A9;
+  box-shadow: 0px 5px 10px 0px #A9A9A9;
+  transition: all 300ms;
 }
-
-/*Main */
-.global {
+body main .main--txt .button:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 7px 12px 0px #A9A9A9;
+}
+body main .global {
   background-color: #f7f9f9;
   border-radius: 20px;
   height: 70px;
   box-shadow: 0px 0px 10px 0px #A9A9A9;
   margin-top: 25px;
 }
-.global:hover {
+body main .global:hover {
   background-color: rgba(147, 86, 220, 0.168627451);
 }
-.global .icone_objet {
+body main .global .icone_objet {
   color: #9356DC;
 }
-
-.colorgrisclaire {
+body main .colorgrisclaire {
   color: #f7f9f9;
 }
-
-.colorgris {
+body main .colorgris {
   color: #a9a9a9;
 }
-
-.function {
+body main .function {
   padding-bottom: 30px;
   margin: 40px 20px;
   cursor: pointer;
 }
-.function h1 {
+body main .function h1 {
   margin-bottom: 15px;
 }
-.function .function_choose {
+body main .function .function_choose {
   display: flex;
   align-items: center;
   font-size: 11px;
 }
-.function .function_choose .icone_number {
+body main .function .function_choose .icone_number {
   background-color: #9356DC;
   border: 2px solid #9356DC;
   height: 25px;
@@ -247,22 +250,20 @@ body .loading circle {
   font-size: 10px;
   margin-left: -12px;
 }
-.function .function_choose .icone_objet {
+body main .function .function_choose .icone_objet {
   font-size: 20px;
   padding-left: 20px;
   margin-right: 30px;
 }
-
-.paddrestaurant {
+body main .paddrestaurant {
   padding: 30px 20px;
 }
-
-.list_restaurant {
+body main .list_restaurant {
   display: flex;
   background-color: #f7f9f9;
   flex-direction: column;
 }
-.list_restaurant .restaurant_select {
+body main .list_restaurant .restaurant_select {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -277,29 +278,29 @@ body .loading circle {
   position: relative;
   text-decoration: none;
 }
-.list_restaurant .restaurant_select .fit-picture img {
+body main .list_restaurant .restaurant_select .fit-picture img {
   height: 180px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
-.list_restaurant .restaurant_select .fit {
+body main .list_restaurant .restaurant_select .fit {
   padding-left: 15px;
   padding-right: 30px;
   padding-top: 15px;
 }
-.list_restaurant .restaurant_select .fit .bloc-icone {
+body main .list_restaurant .restaurant_select .fit .bloc-icone {
   display: flex;
   align-items: center;
 }
-.list_restaurant .restaurant_select .fit .bloc-icone .icone1 {
+body main .list_restaurant .restaurant_select .fit .bloc-icone .icone1 {
   font-size: 25px;
 }
-.list_restaurant .restaurant_select .fit .bloc-icone .icone2 {
+body main .list_restaurant .restaurant_select .fit .bloc-icone .icone2 {
   display: none;
 }
-.list_restaurant .restaurant_select .fit .bloc-icone:hover .icone2 {
+body main .list_restaurant .restaurant_select .fit .bloc-icone:hover .icone2 {
   display: flex;
   font-size: 25px;
   color: transparent;
@@ -307,28 +308,28 @@ body .loading circle {
           background-clip: text;
   background-image: linear-gradient(#9356DC, #FF79DA);
 }
-.list_restaurant .restaurant_select .fit .bloc-icone:hover .icone1 {
+body main .list_restaurant .restaurant_select .fit .bloc-icone:hover .icone1 {
   display: none;
 }
-.list_restaurant .restaurant_select .fit i {
+body main .list_restaurant .restaurant_select .fit i {
   font-size: 30px;
 }
-.list_restaurant .restaurant_select .fit i:hover {
+body main .list_restaurant .restaurant_select .fit i:hover {
   color: #9356DC;
 }
-.list_restaurant .restaurant_select .fit .fit-text {
+body main .list_restaurant .restaurant_select .fit .fit-text {
   font-size: 16px;
 }
-.list_restaurant .restaurant_select .fit .fit-text h2 {
+body main .list_restaurant .restaurant_select .fit .fit-text h2 {
   font-size: 15px;
   padding-bottom: 5px;
   margin: 0;
 }
-.list_restaurant .restaurant_select .fit .fit-text p {
+body main .list_restaurant .restaurant_select .fit .fit-text p {
   font-size: 14px;
   margin: 0;
 }
-.list_restaurant .restaurant_select .new-tag {
+body main .list_restaurant .restaurant_select .new-tag {
   font-size: 12px;
   padding: 5px 10px;
   color: rgba(0, 128, 42, 0.7215686275);
@@ -337,100 +338,108 @@ body .loading circle {
   top: 12px;
   right: 12px;
 }
-
-/*Footer */
-.footer {
+body footer {
+  display: flex;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.7607843137);
   color: #f7f9f9;
   padding: 15px 0 40px 25px;
 }
-.footer .title {
+body footer .title {
   color: #f7f9f9;
   font-size: 20px;
   margin: 0px;
   padding-top: 10px;
   padding-bottom: 20px;
 }
-.footer .footer_text {
+body footer .footer_text {
   display: flex;
   align-items: center;
   margin-top: 6px;
 }
-.footer .footer_text .size1 {
+body footer .footer_text .size1 {
   font-size: 14px;
   margin-right: 12px;
 }
-.footer .footer_text .size2 {
+body footer .footer_text .size2 {
   font-size: 11px;
   margin-right: 12px;
 }
-.footer .footer_text p {
+body footer .footer_text p {
   font-size: 16px;
   margin: 0px;
 }
-.footer .guide {
+body footer .guide {
   font-size: 16px;
   margin: 0px;
   margin-top: 6px;
 }
+body footer .contact {
+  color: #f7f9f9;
+  text-decoration: none;
+  padding-top: 6px;
+}
 
 /*Pages des differents restaurants*/
 /*Header*/
-.header_logo {
-  margin-top: 10px;
-  padding: 12px 30px;
+.header_bloc {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 3px 1px #bdc3c7;
+  margin: 0;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
-.header_logo .return {
+.header_bloc .return {
   font-size: 20px;
   color: black;
+  padding-left: 30px;
 }
-.header_logo .logofood {
-  width: 180px;
-  margin-right: 70px;
-  font-size: 8px;
+.header_bloc h1 {
+  margin: auto;
+  padding-right: 40px;
 }
 
 /*Main*/
-.mainfrancaise {
+main {
   display: flex;
   flex-direction: column;
 }
-.mainfrancaise .francaise_picture {
+main .francaise_picture {
   display: flex;
   width: 106%;
   height: 260px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.mainfrancaise .delice_picture {
+main .delice_picture {
   display: flex;
   width: 104%;
   height: 255px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.mainfrancaise .lanote_picture {
+main .lanote_picture {
   display: flex;
   width: 100%;
   height: 270px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.mainfrancaise .palette_picture {
+main .palette_picture {
   display: flex;
   width: 106%;
   height: 265px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.mainfrancaise .menu_francaise {
+main .main_menu {
   width: 100%;
   background-color: #f7f9f9;
   margin-top: -50px;
   border-radius: 40px 40px 0 0;
 }
-.mainfrancaise .menu_francaise .title_menu {
+main .main_menu .title_menu {
   display: flex;
   margin: 25px 10px 0 10px;
   opacity: 0;
@@ -438,20 +447,20 @@ body .loading circle {
   -webkit-animation: apparition 0.4s 100ms ease-out forwards;
           animation: apparition 0.4s 100ms ease-out forwards;
 }
-.mainfrancaise .menu_francaise .title_menu h1 {
+main .main_menu .title_menu h1 {
   font-size: 28px;
   margin: 0;
 }
-.mainfrancaise .menu_francaise .title_menu .bloc-icone {
+main .main_menu .title_menu .bloc-icone {
   padding-right: 15px;
 }
-.mainfrancaise .menu_francaise .title_menu .bloc-icone .icone1 {
+main .main_menu .title_menu .bloc-icone .icone1 {
   font-size: 25px;
 }
-.mainfrancaise .menu_francaise .title_menu .bloc-icone .icone2 {
+main .main_menu .title_menu .bloc-icone .icone2 {
   display: none;
 }
-.mainfrancaise .menu_francaise .title_menu .bloc-icone:hover .icone2 {
+main .main_menu .title_menu .bloc-icone:hover .icone2 {
   display: flex;
   font-size: 25px;
   color: transparent;
@@ -459,10 +468,10 @@ body .loading circle {
           background-clip: text;
   background-image: linear-gradient(#9356DC, #FF79DA);
 }
-.mainfrancaise .menu_francaise .title_menu .bloc-icone:hover .icone1 {
+main .main_menu .title_menu .bloc-icone:hover .icone1 {
   display: none;
 }
-.mainfrancaise .menu_francaise > p {
+main .main_menu > p {
   padding-left: 8px;
   margin-top: 30px;
   opacity: 0;
@@ -470,7 +479,7 @@ body .loading circle {
   -webkit-animation: apparition 0.8s 0.8s ease-out forwards;
           animation: apparition 0.8s 0.8s ease-out forwards;
 }
-.mainfrancaise .menu_francaise > p::after {
+main .main_menu > p::after {
   margin-top: 5px;
   display: block;
   content: "";
@@ -478,7 +487,7 @@ body .loading circle {
   height: 3px;
   width: 40px;
 }
-.mainfrancaise .menu_francaise .container {
+main .main_menu .container {
   background-color: white;
   border-radius: 15px;
   height: 80px;
@@ -487,35 +496,35 @@ body .loading circle {
   cursor: pointer;
   overflow: hidden;
 }
-.mainfrancaise .menu_francaise .container .btn {
+main .main_menu .container .btn {
   width: 100%;
   height: 100%;
   padding: 12px;
 }
-.mainfrancaise .menu_francaise .container .btn .btn_text {
+main .main_menu .container .btn .btn_text {
   display: block;
   white-space: nowrap;
   width: calc(100% - 70px);
 }
-.mainfrancaise .menu_francaise .container .btn .btn_text h2 {
+main .main_menu .container .btn .btn_text h2 {
   display: flex;
   margin: 0px;
   font-size: 18px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.mainfrancaise .menu_francaise .container .btn .btn_text p {
+main .main_menu .container .btn .btn_text p {
   font-size: 15px;
   margin: 5px 0 0 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.mainfrancaise .menu_francaise .container .btn .price {
+main .main_menu .container .btn .price {
   font-size: 15px;
   width: 30px;
   padding-top: 28px;
 }
-.mainfrancaise .menu_francaise .container .confirm {
+main .main_menu .container .confirm {
   display: flex;
   background-color: #99E2D0;
   transition: all 400ms;
@@ -523,36 +532,36 @@ body .loading circle {
   width: 70px;
   margin-right: -70px;
 }
-.mainfrancaise .menu_francaise .container .confirm .confirm_icon {
+main .main_menu .container .confirm .confirm_icon {
   color: white;
   font-size: 22px;
   transition: transform 1s;
 }
-.mainfrancaise .menu_francaise .container:hover .confirm {
+main .main_menu .container:hover .confirm {
   margin-right: 0px;
   transition-duration: 600ms;
 }
-.mainfrancaise .menu_francaise .container:hover .confirm .confirm_icon {
+main .main_menu .container:hover .confirm .confirm_icon {
   color: white;
   font-size: 22px;
   transform: rotate(360deg);
 }
-.mainfrancaise .menu_francaise .button-order {
-  display: flex;
+main .main_menu .button-order {
   background-image: linear-gradient(#FF79DA, #9356DC);
   color: #f7f9f9;
   border: none;
-  color: white;
-  text-align: center;
   text-decoration: none;
   border-radius: 2rem;
   font-size: 20px;
   height: 55px;
-  box-shadow: 0px 0px 10px 0px #A9A9A9;
-  margin: 60px 75px 80px;
+  width: 210px;
+  box-shadow: 0px 5px 10px 0px #A9A9A9;
+  margin: 60px auto 80px;
+  transition: all 300ms;
 }
-.mainfrancaise .menu_francaise .button-order:hover {
+main .main_menu .button-order:hover {
   transform: scale(1.05);
+  box-shadow: 0px 7px 12px 0px #A9A9A9;
 }
 
 /* Animations des plats des pages menu */
