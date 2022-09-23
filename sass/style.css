@@ -492,7 +492,7 @@ main .main_menu .menu_category > p::after {
   height: 3px;
   width: 40px;
 }
-main .main_menu .container {
+main .main_menu .menu_category .container {
   background-color: white;
   border-radius: 15px;
   height: 70px;
@@ -501,25 +501,25 @@ main .main_menu .container {
   cursor: pointer;
   overflow: hidden;
 }
-main .main_menu .container .btn_text {
+main .main_menu .menu_category .container .btn_text {
   white-space: nowrap;
   width: calc(100% - 70px);
   padding: 12px;
   overflow: hidden;
 }
-main .main_menu .container .btn_text h2 {
+main .main_menu .menu_category .container .btn_text h2 {
   margin: 0px;
   font-size: 18px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-main .main_menu .container .btn_text p {
+main .main_menu .menu_category .container .btn_text p {
   font-size: 15px;
   margin: 5px 0 0 0;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-main .main_menu .container .price {
+main .main_menu .menu_category .container .price {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -528,7 +528,7 @@ main .main_menu .container .price {
   width: 50px;
   margin-right: 25px;
 }
-main .main_menu .container .confirm {
+main .main_menu .menu_category .container .confirm {
   display: flex;
   background-color: #99E2D0;
   transition: all 400ms;
@@ -536,16 +536,16 @@ main .main_menu .container .confirm {
   width: 70px;
   margin-right: -70px;
 }
-main .main_menu .container .confirm .confirm_icon {
+main .main_menu .menu_category .container .confirm .confirm_icon {
   color: white;
   font-size: 22px;
   transition: transform 1s;
 }
-main .main_menu .container:hover .confirm {
+main .main_menu .menu_category .container:hover .confirm {
   margin-right: 0px;
   transition-duration: 600ms;
 }
-main .main_menu .container:hover .confirm .confirm_icon {
+main .main_menu .menu_category .container:hover .confirm .confirm_icon {
   color: white;
   font-size: 22px;
   transform: rotate(360deg);
