@@ -240,6 +240,7 @@ body main .function .function_choose {
   display: flex;
   align-items: center;
   font-size: 11px;
+  max-width: 768px;
 }
 body main .function .function_choose .icone_number {
   background-color: #9356DC;
@@ -277,6 +278,10 @@ body main .list_restaurant .restaurant_select {
   padding-bottom: 20px;
   position: relative;
   text-decoration: none;
+  transition: all 300ms;
+}
+body main .list_restaurant .restaurant_select:hover {
+  transform: scale(1.03);
 }
 body main .list_restaurant .restaurant_select .fit-picture img {
   height: 180px;
@@ -471,7 +476,7 @@ main .main_menu .title_menu .bloc-icone:hover .icone2 {
 main .main_menu .title_menu .bloc-icone:hover .icone1 {
   display: none;
 }
-main .main_menu > p {
+main .main_menu .menu_category > p {
   padding-left: 8px;
   margin-top: 30px;
   opacity: 0;
@@ -479,7 +484,7 @@ main .main_menu > p {
   -webkit-animation: apparition 0.8s 0.8s ease-out forwards;
           animation: apparition 0.8s 0.8s ease-out forwards;
 }
-main .main_menu > p::after {
+main .main_menu .menu_category > p::after {
   margin-top: 5px;
   display: block;
   content: "";
@@ -490,39 +495,38 @@ main .main_menu > p::after {
 main .main_menu .container {
   background-color: white;
   border-radius: 15px;
-  height: 80px;
+  height: 70px;
   box-shadow: 0px 2px 10px 3px #ddd;
   margin-bottom: 15px;
   cursor: pointer;
   overflow: hidden;
 }
-main .main_menu .container .btn {
-  width: 100%;
-  height: 100%;
-  padding: 12px;
-}
-main .main_menu .container .btn .btn_text {
-  display: block;
+main .main_menu .container .btn_text {
   white-space: nowrap;
   width: calc(100% - 70px);
+  padding: 12px;
+  overflow: hidden;
 }
-main .main_menu .container .btn .btn_text h2 {
-  display: flex;
+main .main_menu .container .btn_text h2 {
   margin: 0px;
   font-size: 18px;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-main .main_menu .container .btn .btn_text p {
+main .main_menu .container .btn_text p {
   font-size: 15px;
   margin: 5px 0 0 0;
-  overflow: hidden;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
-main .main_menu .container .btn .price {
+main .main_menu .container .price {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
   font-size: 15px;
-  width: 30px;
-  padding-top: 28px;
+  height: 45px;
+  width: 50px;
+  margin-right: 25px;
 }
 main .main_menu .container .confirm {
   display: flex;
@@ -607,11 +611,27 @@ main .main_menu .button-order:hover {
   }
 }
 /* Ipad */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   /*Header*/
-  .header_logo .logofood {
-    width: 180px;
-    margin-right: 270px;
-    font-size: 8px;
+  .function {
+    display: flex;
+    align-items: center;
+  }
+  .function h1 {
+    margin-right: 40px;
+    margin-bottom: 0;
+  }
+  .function .function_choose {
+    margin-right: 30px;
+    max-width: 1255px;
+  }
+  .function .global {
+    margin-top: 5px;
+  }
+  .list_restaurant {
+    display: block;
+    justify-content: space-around;
+    flex-direction: none;
+    align-items: stretch;
   }
 }/*# sourceMappingURL=style.css.map */
