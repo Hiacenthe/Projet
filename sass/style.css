@@ -588,7 +588,7 @@ main .main_menu .button-order:hover {
 }
 /* desktop */
 @media screen and (min-width: 992px) {
-  /*Header*/
+  /*Accueil*/
   .function > div {
     display: flex;
     flex-wrap: wrap;
