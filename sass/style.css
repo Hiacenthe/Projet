@@ -481,8 +481,8 @@ main .main_menu .menu_category > p {
   margin-top: 30px;
   opacity: 0;
   transform: translateY(-30px);
-  -webkit-animation: apparition 0.8s 0.8s ease-out forwards;
-          animation: apparition 0.8s 0.8s ease-out forwards;
+  -webkit-animation: apparition 0.8s 1s ease-out forwards;
+          animation: apparition 0.8s 1s ease-out forwards;
 }
 main .main_menu .menu_category > p::after {
   margin-top: 5px;
@@ -541,11 +541,11 @@ main .main_menu .menu_category .container .confirm .confirm_icon {
   font-size: 22px;
   transition: transform 1s;
 }
-main .main_menu .menu_category .container:hover .confirm {
+main .main_menu .menu_category .container .confirm:hover .confirm {
   margin-right: 0px;
   transition-duration: 600ms;
 }
-main .main_menu .menu_category .container:hover .confirm .confirm_icon {
+main .main_menu .menu_category .container .confirm:hover .confirm .confirm_icon {
   color: white;
   font-size: 22px;
   transform: rotate(360deg);

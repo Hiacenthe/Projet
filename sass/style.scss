@@ -24,6 +24,11 @@
     padding: 10px 15px;
 }
 
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-accent: #f7f9f9;
+
 /*Page d'accueil*/
 
 body {
@@ -74,13 +79,13 @@ body {
 
     @keyframes color {
         0% {
-            stroke: #9356DC;
+            stroke: $color-primary;
         }
         25% {
-            stroke: #99E2D0;
+            stroke: $color-tertiary;
         }
         50% {
-            stroke: #FF79DA;
+            stroke: $color-secondary;
         }
         75% {
             stroke: #2c3e50;
@@ -151,7 +156,7 @@ body {
 
         .main--txt {
             flex-direction: column;
-            background-color: #f7f9f9;
+            background-color: $color-accent;
             text-align: center;
             width: 100%;
             flex: 1;
@@ -168,8 +173,8 @@ body {
             }
     
             .button {
-                background-image: linear-gradient(#FF79DA, #9356DC);
-                color: #f7f9f9;
+                background-image: linear-gradient($color-secondary, $color-primary);
+                color: $color-accent;
                 border: none;
                 color: white;
                 padding: 20px;
@@ -189,7 +194,7 @@ body {
         }
 
         .global {
-            background-color: #f7f9f9;
+            background-color: $color-accent;
             border-radius: 20px;
             height: 70px;
             box-shadow: 0px 0px 10px 0px #A9A9A9;
@@ -199,12 +204,12 @@ body {
                 background-color: #9356dc2b;
             }
             .icone_objet {
-                color: #9356DC;
+                color: $color-primary;
             }
         }
         
         .colorgrisclaire {
-            color: #f7f9f9;
+            color: $color-accent;
         }
         
         .colorgris {
@@ -225,11 +230,11 @@ body {
                 display: flex;
                 align-items: center;
                 font-size: 11px;
-                max-width: 768px;
+                max-width: 668px;
         
                 .icone_number {
-                    background-color: #9356DC;
-                    border: 2px solid #9356DC;
+                    background-color: $color-primary;
+                    border: 2px solid $color-primary;
                     height: 25px;
                     width: 25px;
                     border-radius: 15px;
@@ -252,7 +257,7 @@ body {
         
         .list_restaurant {
             display: flex;
-            background-color: #f7f9f9;
+            background-color: $color-accent;
             flex-direction: column;
         
             .restaurant_select {
@@ -305,7 +310,7 @@ body {
                                 font-size: 25px;
                                 color: transparent;
                                 background-clip: text;
-                                background-image: linear-gradient(#9356DC, #FF79DA);
+                                background-image: linear-gradient($color-primary, $color-secondary);
                             }
         
                             .icone1 {
@@ -318,7 +323,7 @@ body {
                         font-size: 30px;
         
                         &:hover {
-                            color: #9356DC;
+                            color: $color-primary;
                         }
                     }
         
@@ -343,7 +348,7 @@ body {
                     padding: 5px 10px;
                     color: rgba(0, 128, 42, 0.7215686275);
                     position: absolute;
-                    background: #99E2D0;
+                    background: $color-tertiary;
                     top: 12px;
                     right: 12px;
                 }
@@ -357,11 +362,11 @@ body {
         display: flex;
         flex-direction: column;
         background-color: rgba(0, 0, 0, 0.7607843137);
-        color: #f7f9f9;
+        color: $color-accent;
         padding: 15px 0 40px 25px;
     
         .title {
-            color: #f7f9f9;
+            color: $color-accent;
             font-size: 20px;
             margin: 0px;
             padding-top: 10px;
@@ -396,7 +401,7 @@ body {
         }
 
         .contact {
-            color: #f7f9f9;
+            color: $color-accent;
             text-decoration: none;
             padding-top: 6px;
         }
@@ -469,7 +474,7 @@ main {
 
     .main_menu {
         width: 100%;
-        background-color: #f7f9f9;
+        background-color: $color-accent;
         margin-top: -50px;
         border-radius: 40px 40px 0 0;
 
@@ -501,7 +506,7 @@ main {
                         font-size: 25px;
                         color: transparent;
                         background-clip: text;
-                        background-image: linear-gradient(#9356DC, #FF79DA);
+                        background-image: linear-gradient($color-primary, $color-secondary);
                     }
     
                     .icone1 {
@@ -516,24 +521,24 @@ main {
 
         .menu_category {
 
-
             > p {
                 padding-left: 8px;
                 margin-top: 30px;
                 opacity: 0;
                 transform: translateY(-30px);
-                animation: apparition 0.8s 0.8s ease-out forwards;
+                animation: apparition 0.8s 1s ease-out forwards;
                 &::after {
                     margin-top: 5px;
                     display: block;
                     content: "";
-                    background-color: #99E2D0;
+                    background-color: $color-tertiary;
                     height: 3px;
                     width: 40px;
                 }
             }
 
             .container {
+                @include apparition;
                 background-color: white;
                 border-radius: 15px;
                 height: 70px;
@@ -541,6 +546,12 @@ main {
                 margin-bottom: 15px;
                 cursor: pointer;
                 overflow: hidden;
+                transform: translateY(-30px);
+                opacity: 0;
+
+                &.active {
+                    opacity: 1;
+                }
                 
                 .btn_text {
                     white-space: nowrap;
@@ -577,7 +588,7 @@ main {
     
                 .confirm {
                     display: flex;
-                    background-color: #99E2D0;
+                    background-color: $color-tertiary;
                     transition: all 400ms;
                     height: 100%;
                     width: 70px;
@@ -588,31 +599,31 @@ main {
                         font-size: 22px;
                         transition: transform 1s;
                     }
+
+                    &:hover {
                     
-                }
-    
-                &:hover {
-                    
-                    .confirm {
-                        margin-right: 0px;
-                        transition-duration: 600ms;
-    
-                        .confirm_icon {
-                            color: white;
-                            font-size: 22px;
-                            transform: rotate(360deg);
+                        .confirm {
+                            margin-right: 0px;
+                            transition-duration: 600ms;
+        
+                            .confirm_icon {
+                                color: white;
+                                font-size: 22px;
+                                transform: rotate(360deg);
+                            }
                         }
+                        
                     }
                     
-                    
                 }
+    
             }
         }
         
 
         .button-order {
-            background-image: linear-gradient(#FF79DA, #9356DC);
-            color: #f7f9f9;
+            background-image: linear-gradient($color-secondary, $color-primary);
+            color: $color-accent;
             border: none;
             text-decoration: none;
             border-radius: 2rem;
@@ -636,15 +647,14 @@ main {
 
 /* Animations des plats des pages menu */
 
-@for $i from 1 through 4 {
-    .apparition-#{$i} {
-        opacity: 0;
-        transform: translateY(-30px);
-        animation: apparition 0.8s 0.2s*$i ease-out forwards;
+
+@mixin animation {
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation: apparition .8s #{$i * .2}s ease-out forwards;
+      }
     }
 }
-
-
 
 @keyframes apparition {
     100% {
@@ -656,36 +666,9 @@ main {
 
 
 /* Ipad */
-@media screen and (min-width:992px){
+@media screen and (min-width:768px){
 
     /*Header*/
-
-    .function {
-        display: flex;
-        align-items: center;
-
-        h1 {
-            margin-right: 40px;
-            margin-bottom: 0;
-        }
-
-        .function_choose {
-            margin-right: 30px;
-            max-width: 1255px;
-        }
-
-        .global {
-            margin-top: 5px;
-        }
-    }
-
-    .list_restaurant {
-        display: block;
-        justify-content: space-around;
-        flex-direction: none;
-        align-items: stretch;
-    }
-    
   
 
 }
