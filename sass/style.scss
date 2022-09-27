@@ -520,6 +520,7 @@ main {
         
 
         .menu_category {
+            transform: translateY(-30px);
 
             > p {
                 padding-left: 8px;
@@ -538,6 +539,7 @@ main {
             }
 
             .container {
+                @include animation;
                 background-color: white;
                 border-radius: 15px;
                 height: 70px;
@@ -545,12 +547,8 @@ main {
                 margin-bottom: 15px;
                 cursor: pointer;
                 overflow: hidden;
-                transform: translateY(-30px);
                 opacity: 0;
 
-                &.active {
-                    opacity: 1;
-                }
                 
                 .btn_text {
                     white-space: nowrap;
@@ -598,20 +596,20 @@ main {
                         font-size: 22px;
                         transition: transform 1s;
                     }
-
-                    &:hover {
                     
-                        .confirm {
-                            margin-right: 0px;
-                            transition-duration: 600ms;
-        
-                            .confirm_icon {
-                                color: white;
-                                font-size: 22px;
-                                transform: rotate(360deg);
-                            }
+                }
+
+                &:hover {
+                    
+                    .confirm {
+                        margin-right: 0px;
+                        transition-duration: 600ms;
+    
+                        .confirm_icon {
+                            color: white;
+                            font-size: 22px;
+                            transform: rotate(360deg);
                         }
-                        
                     }
                     
                 }
@@ -646,14 +644,16 @@ main {
 
 /* Animations des plats des pages menu */
 
-
 @mixin animation {
     @for $i from 1 through 4 {
-      &:nth-child(#{$i}) {
-        animation: apparition .8s #{$i * .2}s ease-out forwards;
-      }
+        &:nth-child(#{$i}) {
+            animation: apparition 0.8s 0.2 #{$i * .2}s ease-out forwards;
+        }
     }
+        
 }
+
+
 
 @keyframes apparition {
     100% {
@@ -667,7 +667,7 @@ main {
 /* desktop */
 @media screen and (min-width:992px){
 
-    /*Accueil*/
+    /*Page d'accueil*/
   .function {
     >div {
         display: flex;
@@ -709,4 +709,19 @@ main {
     }
 
   }
+
+  /*Pages des menus*/
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    .menu_category {
+        width: 345px;
+        margin-bottom: 40px;
+    }
+
+  }
+
 }
