@@ -476,6 +476,9 @@ main .main_menu .title_menu .bloc-icone:hover .icone2 {
 main .main_menu .title_menu .bloc-icone:hover .icone1 {
   display: none;
 }
+main .main_menu .menu_category {
+  transform: translateY(-30px);
+}
 main .main_menu .menu_category > p {
   padding-left: 8px;
   margin-top: 30px;
@@ -500,11 +503,6 @@ main .main_menu .menu_category .container {
   margin-bottom: 15px;
   cursor: pointer;
   overflow: hidden;
-  transform: translateY(-30px);
-  opacity: 0;
-}
-main .main_menu .menu_category .container.active {
-  opacity: 1;
 }
 main .main_menu .menu_category .container .btn_text {
   white-space: nowrap;
@@ -546,11 +544,11 @@ main .main_menu .menu_category .container .confirm .confirm_icon {
   font-size: 22px;
   transition: transform 1s;
 }
-main .main_menu .menu_category .container .confirm:hover .confirm {
+main .main_menu .menu_category .container:hover .confirm {
   margin-right: 0px;
   transition-duration: 600ms;
 }
-main .main_menu .menu_category .container .confirm:hover .confirm .confirm_icon {
+main .main_menu .menu_category .container:hover .confirm .confirm_icon {
   color: white;
   font-size: 22px;
   transform: rotate(360deg);
@@ -588,7 +586,7 @@ main .main_menu .button-order:hover {
 }
 /* desktop */
 @media screen and (min-width: 992px) {
-  /*Accueil*/
+  /*Page d'accueil*/
   .function > div {
     display: flex;
     flex-wrap: wrap;
@@ -618,5 +616,15 @@ main .main_menu .button-order:hover {
   .list_restaurant .restaurant-group .restaurant_select {
     width: 42%;
     margin-bottom: 50px;
+  }
+  /*Pages des menus*/
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  .menu .menu_category {
+    width: 345px;
+    margin-bottom: 40px;
   }
 }/*# sourceMappingURL=style.css.map */

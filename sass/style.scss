@@ -547,7 +547,6 @@ main {
                 margin-bottom: 15px;
                 cursor: pointer;
                 overflow: hidden;
-                opacity: 0;
 
                 
                 .btn_text {
@@ -647,7 +646,8 @@ main {
 @mixin animation {
     @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
-            animation: apparition 0.8s 0.2 #{$i * .2}s ease-out forwards;
+            opacity: 0;
+            animation: apparition 0.8s .2 #{$i * .2}s ease-out forwards;
         }
     }
         
