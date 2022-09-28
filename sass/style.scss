@@ -29,13 +29,33 @@ $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $color-accent: #f7f9f9;
 
+/*apparition progressive des menu*/
+@keyframes progress {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@mixin apparition {
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+        animation: progress .2s #{$i * .2}s ease-in forwards;
+        animation-duration: 1s;
+        }
+    }
+        
+}
+
 /*Page d'accueil*/
 
 body {
     margin: 0px;
 
+    /* Création du loader */
     .loading {
-        /* Création du loader */
         margin: auto;
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
@@ -62,12 +82,9 @@ body {
         stroke-width: 3;
         stroke-linecap: round;
     }
-    
 
 
     /* Animation du loader */
-    
-    
     @keyframes spin {
         from {
             transform: rotate(0deg);
@@ -121,6 +138,7 @@ body {
         text-align: center;
         box-shadow: 0 2px 3px 1px #bdc3c7;
         margin: 0;
+        width: 100%;
         padding-top: 15px;
         padding-bottom: 10px;
         position: relative;
@@ -189,6 +207,7 @@ body {
                 &:hover {
                     transform: scale(1.08);
                     box-shadow: 0px 7px 12px 0px #A9A9A9;
+                    background-image: linear-gradient(#ff79dad1, #9356dcd6);
                 }
             }
         }
@@ -412,260 +431,225 @@ body {
 
 /*Pages des differents restaurants*/
 
-/*Header*/
-
-
-.header_bloc {
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 3px 1px #bdc3c7;
-    margin: 0;
-    padding-top: 15px;
-    padding-bottom: 10px;
-
-    .return {
-        font-size: 20px;
-        color: black;
-        padding-left: 30px;
-    }
+body {
     
-    h1 {
-        margin: auto;
-        padding-right: 40px;
-
-    }
-}
-
-
-/*Main*/
-
-
-main {
-    display: flex;
     flex-direction: column;
-
-    .francaise_picture {
+    /*Header*/
+    .header_bloc {
         display: flex;
-        width: 106%;
-        height: 260px;
-        object-fit: cover;
-    }
+        align-items: center;
+        box-shadow: 0 2px 3px 1px #bdc3c7;
+        margin: 0;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 10px;
     
-    .delice_picture {
-        display: flex;
-        width: 104%;
-        height: 255px;
-        object-fit: cover;
+        .return {
+            font-size: 20px;
+            color: black;
+            padding-left: 30px;
+        }
+        
+        h1 {
+            margin: auto;
+            padding-right: 40px;
+        }
     }
 
-    .lanote_picture {
+    /*Main*/
+    .main-bloc {
         display: flex;
-        width: 100%;
-        height: 270px;
-        object-fit: cover;
-    }
-
-    .palette_picture {
-        display: flex;
-        width: 106%;
-        height: 265px;
-        object-fit: cover;
-    }
-
-    .main_menu {
-        width: 100%;
+        flex-direction: column;
         background-color: $color-accent;
-        margin-top: -50px;
-        border-radius: 40px 40px 0 0;
 
-        .title_menu {
+        .francaise_picture {
             display: flex;
-            margin: 25px 10px 0 10px;
-            opacity: 0;
-            transform: translateY(-30px);
-            animation: apparition 0.4s 100ms ease-out forwards;
-
-            h1 {
-                font-size: 28px;
-                margin: 0;
-            }
-
-            .bloc-icone {
-                padding-right: 15px;
-                .icone1 {
-                    font-size: 25px;
-                }
+            height: 270px;
+            object-fit: cover;
+        }
+        
+        .delice_picture {
+            display: flex;
+            height: 255px;
+            object-fit: cover;
+        }
     
-                .icone2 {
-                    display: none;
-                }
+        .lanote_picture {
+            display: flex;
+            height: 270px;
+            object-fit: cover;
+        }
     
-                &:hover {
-                    .icone2 {
-                        display: flex;
-                        font-size: 25px;
-                        color: transparent;
-                        background-clip: text;
-                        background-image: linear-gradient($color-primary, $color-secondary);
-                    }
-    
-                    .icone1 {
-                        display: none;
-                    }
-                }  
-                
-            }
+        .palette_picture {
+            display: flex;
+            height: 265px;
+            object-fit: cover;
         }
 
-        
+        .main_menu {
+            display: flex;
+            flex-direction: column;
+            background-color: $color-accent;
+            margin-top: -50px;
+            border-radius: 40px 40px 0 0;
 
-        .menu_category {
-            transform: translateY(-30px);
-
-            > p {
-                padding-left: 8px;
-                margin-top: 30px;
+            .title_menu {
+                display: flex;
+                margin: 25px 10px 10px 10px;
                 opacity: 0;
                 transform: translateY(-30px);
-                animation: apparition 0.8s 1s ease-out forwards;
-                &::after {
-                    margin-top: 5px;
-                    display: block;
-                    content: "";
-                    background-color: $color-tertiary;
-                    height: 3px;
-                    width: 40px;
-                }
-            }
+                animation: progress 0.4s 100ms ease-out forwards;
 
-            .container {
-                @include animation;
-                background-color: white;
-                border-radius: 15px;
-                height: 70px;
-                box-shadow: 0px 2px 10px 3px #ddd;
-                margin-bottom: 15px;
-                cursor: pointer;
-                overflow: hidden;
-
-                
-                .btn_text {
-                    white-space: nowrap;
-                    width: calc(100% - 70px);
-                    padding: 12px;
-                    overflow: hidden;
-    
-                    h2 {
-                        margin: 0px;
-                        font-size: 18px;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                    }
-    
-                    p {
-                        font-size: 15px;
-                        margin: 5px 0 0 0;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                    }
-                }
-    
-                .price {
-                    display: flex;
-                    align-items: flex-end;
-                    justify-content: flex-end;
-                    font-size: 15px;
-                    height: 45px;
-                    width: 50px;
-                    margin-right: 25px;
-                    
-                }
-                
-    
-                .confirm {
-                    display: flex;
-                    background-color: $color-tertiary;
-                    transition: all 400ms;
-                    height: 100%;
-                    width: 70px;
-                    margin-right: -70px;
-    
-                    .confirm_icon {
-                        color: white;
-                        font-size: 22px;
-                        transition: transform 1s;
-                    }
-                    
+                .name-restaurant {
+                    font-size: 28px;
                 }
 
-                &:hover {
-                    
-                    .confirm {
-                        margin-right: 0px;
-                        transition-duration: 600ms;
-    
-                        .confirm_icon {
-                            color: white;
-                            font-size: 22px;
-                            transform: rotate(360deg);
+                .bloc-icone {
+                    padding-right: 15px;
+
+                    .icone1 {
+                        font-size: 25px;
+                    }
+
+                    .icone2 {
+                        display: none;
+                    }
+
+                    &:hover {
+                        .icone2 {
+                            display: flex;
+                            font-size: 25px;
+                            color: transparent;
+                            background-clip: text;
+                            background-image: linear-gradient($color-primary, $color-secondary);
+                        }
+
+                        .icone1 {
+                            display: none;
                         }
                     }
-                    
                 }
-    
+            }
+
+            .menu {
+                .menu_category {
+                    transform: translateY(-30px);
+
+                    .category-dishes {
+                        @include apparition;
+                        padding-left: 8px;
+                        &::after {
+                            margin-top: 5px;
+                            display: block;
+                            content: "";
+                            background-color: $color-tertiary;
+                            height: 3px;
+                            width: 40px;
+                        }
+                        
+                    }
+
+                    .container {
+                        @include apparition;
+                        background-color: white;
+                        border-radius: 15px;
+                        height: 70px;
+                        box-shadow: 0px 2px 10px 3px #ddd;
+                        margin-bottom: 15px;
+                        cursor: pointer;
+                        overflow: hidden;
+
+                        .btn_text {
+                            white-space: nowrap;
+                            width: calc(100% - 70px);
+                            padding: 12px;
+                            overflow: hidden;
+
+                            h2 {
+                                margin: 0px;
+                                font-size: 18px;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+
+                            p {
+                                font-size: 15px;
+                                margin: 5px 0 0 0;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+                        }
+
+                        .price {
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: flex-end;
+                            font-size: 15px;
+                            height: 45px;
+                            width: 50px;
+                            margin-right: 25px;
+                        }
+
+                        .confirm {
+                            display: flex;
+                            background-color: $color-tertiary;
+                            transition: all 400ms;
+                            height: 100%;
+                            width: 70px;
+                            margin-right: -70px;
+
+                            .confirm_icon {
+                                color: white;
+                                font-size: 22px;
+                                transition: transform 1s;
+                            }
+                        }
+
+                        &:hover {
+                            .confirm {
+                                margin-right: 0px;
+                                transition-duration: 600ms;
+
+                                .confirm_icon {
+                                    color: white;
+                                    font-size: 22px;
+                                    transform: rotate(360deg);
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+            }
+
+            .button-order {
+                background-image: linear-gradient($color-secondary, $color-primary);
+                color: $color-accent;
+                border: none;
+                text-decoration: none;
+                border-radius: 2rem;
+                font-size: 20px;
+                height: 55px;
+                width: 210px;
+                box-shadow: 0px 5px 10px 0px #A9A9A9;
+                margin: 60px auto 80px;
+                transition: all 300ms;
+
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0px 7px 12px 0px #A9A9A9;
+                    background-image: linear-gradient(#ff79dad1, #9356dcd6);
+                }
             }
         }
-        
-
-        .button-order {
-            background-image: linear-gradient($color-secondary, $color-primary);
-            color: $color-accent;
-            border: none;
-            text-decoration: none;
-            border-radius: 2rem;
-            font-size: 20px;
-            height: 55px;
-            width: 210px;
-            box-shadow: 0px 5px 10px 0px #A9A9A9;
-            margin: 60px auto 80px;
-            transition: all 300ms;
-
-
-            &:hover {
-                transform: scale(1.05);
-                box-shadow: 0px 7px 12px 0px #A9A9A9;
-            }
-        }
 
     }
-}
-
-
-/* Animations des plats des pages menu */
-
-@mixin animation {
-    @for $i from 1 through 4 {
-        &:nth-child(#{$i}) {
-            opacity: 0;
-            animation: apparition 0.8s .2 #{$i * .2}s ease-out forwards;
-        }
-    }
-        
-}
-
-
-
-@keyframes apparition {
-    100% {
-        opacity: 1;
-        transform: none;
-    }
-}
     
-
+}
 
 /* desktop */
-@media screen and (min-width:992px){
+@media screen and (min-width: 992px) {
 
     /*Page d'accueil*/
   .function {
@@ -694,34 +678,61 @@ main {
   }
 
   .list_restaurant {
+    display: flex;
     flex-direction: column;
+
+    h1 {
+        margin: 20px 80px 0;
+    }
+    
     
     .restaurant-group {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: stretch;
         flex-wrap: wrap;
+        
 
         .restaurant_select {
             width: 42%;
             margin-bottom: 50px;
+            margin: 20px;
         }
     }
 
   }
 
-  /*Pages des menus*/
-
-  .menu {
+  footer {
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-
-    .menu_category {
-        width: 345px;
-        margin-bottom: 40px;
-    }
-
+    align-items: center;
   }
 
+  /*Pages des menus*/
+
+  .main_menu {
+    display: flex;
+    flex-direction: column;
+
+    .title_menu {
+        display: flex;
+        padding-left: 60px;
+        padding-right: 45px;
+    }
+
+    .menu {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-wrap: wrap;
+    
+        .menu_category {
+            margin: auto;
+    
+            .container {
+                width: 360px;
+            }
+        }
+        
+    }
+  }
 }
