@@ -625,7 +625,7 @@ body .main-bloc .main_menu .button-order {
   height: 55px;
   width: 210px;
   box-shadow: 0px 5px 10px 0px #A9A9A9;
-  margin: 60px auto 80px;
+  margin: 20px auto 80px;
   transition: all 300ms;
 }
 body .main-bloc .main_menu .button-order:hover {
