@@ -8,6 +8,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-accent: #f7f9f9;
+
 .flexcenter {
     display: flex;
     justify-content: center;
@@ -24,10 +29,18 @@
     padding: 10px 15px;
 }
 
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-$color-accent: #f7f9f9;
+.paddrestaurant {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.colorgrisclaire {
+    color: $color-accent;
+}
+
+.colorgris {
+    color: #a9a9a9;
+}
 
 /*apparition progressive des menu*/
 @keyframes progress {
@@ -217,32 +230,27 @@ body {
             border-radius: 20px;
             height: 70px;
             box-shadow: 0px 0px 10px 0px #A9A9A9;
-            margin-top: 25px;
+            margin-bottom: 25px;
         
             &:hover {
                 background-color: #9356dc2b;
+                .icone_objet {
+                    color: $color-primary;
+                }
             }
-            .icone_objet {
-                color: $color-primary;
-            }
-        }
-        
-        .colorgrisclaire {
-            color: $color-accent;
-        }
-        
-        .colorgris {
-            color: #a9a9a9;
+            
         }
         
         
         .function {
             padding-bottom: 30px;
-            margin: 40px 20px;
             cursor: pointer;
+            padding-left: 5%;
+            padding-right: 5%;
         
-            h1 {
-                margin-bottom: 15px;
+            h2 {
+                margin-bottom: 20px;
+                margin-top: 40px;
             }
         
             .function_choose {
@@ -262,23 +270,30 @@ body {
                 }
         
                 .icone_objet {
+                    display: flex;
                     font-size: 20px;
                     padding-left: 20px;
                     margin-right: 20px;
+                }
+
+                h3 {
+                    font-size: 17px;
                 }
         
             }
         }
         
-        .paddrestaurant {
-            padding: 30px 20px;
-        }
-        
         .list_restaurant {
             display: flex;
+            flex: 1;
             background-color: $color-accent;
             flex-direction: column;
-        
+            
+
+            h2 {
+                margin-top: 40px;
+            }
+
             .restaurant_select {
                 display: flex;
                 flex-direction: column;
@@ -652,60 +667,75 @@ body {
 @media screen and (min-width: 992px) {
 
     /*Page d'accueil*/
-  .function {
-    >div {
-        display: flex;
-        flex-wrap: wrap;
 
-        .function_choose {
+    main {
+        flex-direction: column;
+        .function {
             display: flex;
-            align-items: center;
-            margin: auto;
-            width: 380px;
-            margin-bottom: 20px;
-    
-            h2 {
-                padding-right: 20px;
+            flex-direction: column;
+            padding-left: 80px;
+            padding-right: 80px;
+
+            >div {
+                display: flex;
+                align-items: stretch;
+                flex-wrap: wrap;
+        
+                .function_choose {
+                    display: flex;
+                    width: 360px;
+                    margin-right: 40px;
+            
+                    h2 {
+                        padding-right: 20px;
+                    }
+                }
+            
+                .global {
+                    margin-top: 0;
+                }
             }
         }
-    
-        .global {
-            margin-top: 0;
+
+        .paddrestaurant {
+            display: none;
         }
-    }
 
-    
-  }
+        .list_restaurant {
+            display: flex;
+            flex-direction: column;
+            padding-left: 80px;
+            padding-right: 80px;
+            
+            
+            .restaurant-group {
+                display: flex;
+                justify-content: space-between;
+                align-items: stretch;
+                flex-wrap: wrap;
+                
+                .restaurant_select {
+                    width: 44%;
+                    height: 300px;
+                    margin-bottom: 50px;
 
-  .list_restaurant {
-    display: flex;
-    flex-direction: column;
-
-    h1 {
-        margin: 20px 80px 0;
-    }
-    
-    
-    .restaurant-group {
-        display: flex;
-        justify-content: center;
-        align-items: stretch;
-        flex-wrap: wrap;
+                    .fit-picture img {
+                        height: 220px;
+                        width: 100%;
+                        object-fit: cover;
+                        border-radius: 10px 10px 0 0;
+                    }
+                }
+            }
         
-
-        .restaurant_select {
-            width: 42%;
-            margin-bottom: 50px;
-            margin: 20px;
         }
     }
 
-  }
+    footer {
+        display: flex;
+        align-items: center;
+    }
 
-  footer {
-    display: flex;
-    align-items: center;
-  }
 
   /*Pages des menus*/
 

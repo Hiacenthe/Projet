@@ -24,6 +24,19 @@
   padding: 10px 15px;
 }
 
+.paddrestaurant {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.colorgrisclaire {
+  color: #f7f9f9;
+}
+
+.colorgris {
+  color: #a9a9a9;
+}
+
 /*apparition progressive des menu*/
 @-webkit-keyframes progress {
   0% {
@@ -233,27 +246,23 @@ body main .global {
   border-radius: 20px;
   height: 70px;
   box-shadow: 0px 0px 10px 0px #A9A9A9;
-  margin-top: 25px;
+  margin-bottom: 25px;
 }
 body main .global:hover {
   background-color: rgba(147, 86, 220, 0.168627451);
 }
-body main .global .icone_objet {
+body main .global:hover .icone_objet {
   color: #9356DC;
-}
-body main .colorgrisclaire {
-  color: #f7f9f9;
-}
-body main .colorgris {
-  color: #a9a9a9;
 }
 body main .function {
   padding-bottom: 30px;
-  margin: 40px 20px;
   cursor: pointer;
+  padding-left: 5%;
+  padding-right: 5%;
 }
-body main .function h1 {
-  margin-bottom: 15px;
+body main .function h2 {
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 body main .function .function_choose {
   display: flex;
@@ -271,17 +280,22 @@ body main .function .function_choose .icone_number {
   margin-left: -12px;
 }
 body main .function .function_choose .icone_objet {
+  display: flex;
   font-size: 20px;
   padding-left: 20px;
   margin-right: 20px;
 }
-body main .paddrestaurant {
-  padding: 30px 20px;
+body main .function .function_choose h3 {
+  font-size: 17px;
 }
 body main .list_restaurant {
   display: flex;
+  flex: 1;
   background-color: #f7f9f9;
   flex-direction: column;
+}
+body main .list_restaurant h2 {
+  margin-top: 40px;
 }
 body main .list_restaurant .restaurant_select {
   display: flex;
@@ -637,40 +651,57 @@ body .main-bloc .main_menu .button-order:hover {
 /* desktop */
 @media screen and (min-width: 992px) {
   /*Page d'accueil*/
-  .function > div {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .function > div .function_choose {
-    display: flex;
-    align-items: center;
-    margin: auto;
-    width: 380px;
-    margin-bottom: 20px;
-  }
-  .function > div .function_choose h2 {
-    padding-right: 20px;
-  }
-  .function > div .global {
-    margin-top: 0;
-  }
-  .list_restaurant {
-    display: flex;
+  main {
     flex-direction: column;
   }
-  .list_restaurant h1 {
-    margin: 20px 80px 0;
-  }
-  .list_restaurant .restaurant-group {
+  main .function {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  main .function > div {
+    display: flex;
     align-items: stretch;
     flex-wrap: wrap;
   }
-  .list_restaurant .restaurant-group .restaurant_select {
-    width: 42%;
+  main .function > div .function_choose {
+    display: flex;
+    width: 360px;
+    margin-right: 40px;
+  }
+  main .function > div .function_choose h2 {
+    padding-right: 20px;
+  }
+  main .function > div .global {
+    margin-top: 0;
+  }
+  main .paddrestaurant {
+    display: none;
+  }
+  main .list_restaurant {
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  main .list_restaurant .restaurant-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  main .list_restaurant .restaurant-group .restaurant_select {
+    width: 44%;
+    height: 300px;
     margin-bottom: 50px;
-    margin: 20px;
+  }
+  main .list_restaurant .restaurant-group .restaurant_select .fit-picture img {
+    height: 220px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 10px 10px 0 0;
   }
   footer {
     display: flex;
