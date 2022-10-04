@@ -669,16 +669,16 @@ body {
 
 /* desktop */
 @media screen and (min-width: 1200px ) {
-    /*Page d'accueil*/
 
     .paddrestaurant {
-        padding-left: 15%;
-        padding-right: 15%;
+        padding-left: 12%;
+        padding-right: 12%;
     }
 
     main {
         flex-direction: column;
-
+        
+        /*Page d'accueil*/
         .function {
             display: flex;
             flex-direction: column;
@@ -717,6 +717,29 @@ body {
             }
         
         }
+
+        /*pages des menus*/
+
+        .main_menu {
+            display: flex;
+            flex-direction: column;
+
+            .menu {
+                display: flex;
+                justify-content: space-between;
+                align-items: stretch;
+                flex-wrap: wrap;
+
+                .menu_category {
+
+                    .container {
+                        width: 340px;
+                    }
+                }
+            }
+        }
+
+
     }
 
     
