@@ -343,7 +343,6 @@ body {
                                     display: flex;
                                     font-size: 25px;
                                     color: transparent;
-                                    background-clip: text;
                                     background-image: linear-gradient($color-primary, $color-secondary);
                                 }
             
@@ -481,29 +480,13 @@ body {
         flex-direction: column;
         background-color: $color-accent;
 
-        .francaise_picture {
-            display: flex;
-            height: 270px;
-            object-fit: cover;
-        }
-        
-        .delice_picture {
-            display: flex;
-            height: 255px;
-            object-fit: cover;
-        }
-    
-        .lanote_picture {
-            display: flex;
-            height: 270px;
-            object-fit: cover;
-        }
-    
-        .palette_picture {
+        .restau_picture {
             display: flex;
             height: 265px;
             object-fit: cover;
         }
+    
+    
 
         .main_menu {
             display: flex;
@@ -542,7 +525,6 @@ body {
                             display: flex;
                             font-size: 25px;
                             color: transparent;
-                            background-clip: text;
                             background-image: linear-gradient($color-primary, $color-secondary);
                         }
 
@@ -760,9 +742,6 @@ body {
         width: 1200px;
         margin: auto;
     }
-
-
-    
 
     
 }
