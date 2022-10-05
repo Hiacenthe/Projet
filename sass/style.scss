@@ -25,21 +25,17 @@ $color-accent: #f7f9f9;
     align-items: center;
 }
 
-.paddrestaurant {
-    padding-right: 5%;
-    padding-left: 5%;
-}
-
-.main_menu {
-    padding: 10px 15px;
-}
-
 .colorgrisclaire {
     color: $color-accent;
 }
 
 .colorgris {
     color: #a9a9a9;
+}
+
+.paddrestaurant {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /*apparition progressive des menu*/
@@ -53,7 +49,7 @@ $color-accent: #f7f9f9;
 }
 
 @mixin apparition {
-    @for $i from 1 through 4 {
+    @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
         animation: progress .2s #{$i * .2}s ease-in forwards;
         animation-duration: 1s;
@@ -284,113 +280,118 @@ body {
             
         }
 
-        
-        
         .list_restaurant {
             display: flex;
-            flex: 1;
             background-color: $color-accent;
-            flex-direction: column;
-            
 
-            h2 {
-                margin-top: 40px;
-            }
-
-            .restaurant_select {
+            .restaurant_btn {
                 display: flex;
+                flex: 1;
                 flex-direction: column;
-                width: 100%;
-                background-color: white;
-                color: black;
-                border-radius: 12px;
-                margin-bottom: 20px;
-                overflow: hidden;
-                box-shadow: 0px 0px 10px 0px #ddd;
-                cursor: pointer;
-                padding-bottom: 20px;
-                position: relative;
-                text-decoration: none;
-                transition: all 300ms;
-
-                &:hover {
-                    transform: scale(1.03);
+                
+    
+                h2 {
+                    margin-top: 40px;
                 }
-        
-                .fit-picture img {
-                    height: 180px;
+    
+                .restaurant_select {
+                    display: flex;
+                    flex-direction: column;
                     width: 100%;
-                    object-fit: cover;
-                    border-radius: 10px 10px 0 0;
-                }
-        
-                .fit {
-                    padding-left: 15px;
-                    padding-right: 30px;
-                    padding-top: 15px;
-        
-                    .bloc-icone {
-                        display: flex;
-                        align-items: center;
-                        
-                        .icone1 {
-                            font-size: 25px;
-                        }
-        
-                        .icone2 {
-                            display: none;
-                        }
-        
-                        &:hover {
-                            .icone2 {
-                                display: flex;
-                                font-size: 25px;
-                                color: transparent;
-                                background-clip: text;
-                                background-image: linear-gradient($color-primary, $color-secondary);
-                            }
-        
+                    background-color: white;
+                    color: black;
+                    border-radius: 12px;
+                    margin-bottom: 20px;
+                    overflow: hidden;
+                    box-shadow: 0px 0px 10px 0px #ddd;
+                    cursor: pointer;
+                    padding-bottom: 20px;
+                    position: relative;
+                    text-decoration: none;
+                    transition: all 300ms;
+    
+                    &:hover {
+                        transform: scale(1.03);
+                    }
+            
+                    .fit-picture img {
+                        height: 180px;
+                        width: 100%;
+                        object-fit: cover;
+                        border-radius: 10px 10px 0 0;
+                    }
+            
+                    .fit {
+                        padding-left: 15px;
+                        padding-right: 30px;
+                        padding-top: 15px;
+            
+                        .bloc-icone {
+                            display: flex;
+                            align-items: center;
+                            
                             .icone1 {
+                                font-size: 25px;
+                            }
+            
+                            .icone2 {
                                 display: none;
                             }
+            
+                            &:hover {
+                                .icone2 {
+                                    display: flex;
+                                    font-size: 25px;
+                                    color: transparent;
+                                    background-clip: text;
+                                    background-image: linear-gradient($color-primary, $color-secondary);
+                                }
+            
+                                .icone1 {
+                                    display: none;
+                                }
+                            }
+                        }
+            
+                        i {
+                            font-size: 30px;
+            
+                            &:hover {
+                                color: $color-primary;
+                            }
+                        }
+            
+                        .fit-text {
+                            font-size: 16px;
+            
+                            h3 {
+                                font-size: 15px;
+                                padding-bottom: 5px;
+                                margin: 0;
+                            }
+            
+                            p {
+                                font-size: 14px;
+                                margin: 0;
+                            }
                         }
                     }
-        
-                    i {
-                        font-size: 30px;
-        
-                        &:hover {
-                            color: $color-primary;
-                        }
+            
+                    .new-tag {
+                        font-size: 12px;
+                        padding: 5px 10px;
+                        color: rgba(0, 128, 42, 0.7215686275);
+                        position: absolute;
+                        background: $color-tertiary;
+                        top: 12px;
+                        right: 12px;
                     }
-        
-                    .fit-text {
-                        font-size: 16px;
-        
-                        h3 {
-                            font-size: 15px;
-                            padding-bottom: 5px;
-                            margin: 0;
-                        }
-        
-                        p {
-                            font-size: 14px;
-                            margin: 0;
-                        }
-                    }
-                }
-        
-                .new-tag {
-                    font-size: 12px;
-                    padding: 5px 10px;
-                    color: rgba(0, 128, 42, 0.7215686275);
-                    position: absolute;
-                    background: $color-tertiary;
-                    top: 12px;
-                    right: 12px;
                 }
             }
+
         }
+        
+        
         
     }
 
@@ -400,8 +401,7 @@ body {
         flex-direction: column;
         background-color: rgba(0, 0, 0, 0.7607843137);
         color: $color-accent;
-        padding-top: 15px;
-        padding-bottom: 40px;
+        padding: 15px 0 40px;
     
         .title {
             color: $color-accent;
@@ -511,20 +511,23 @@ body {
             background-color: $color-accent;
             margin-top: -50px;
             border-radius: 40px 40px 0 0;
+            padding: 10px 15px;
 
-            .title_menu {
+            .title-like {
                 display: flex;
-                margin: 25px 10px 10px 10px;
+                margin: 32px 10px 0;
                 opacity: 0;
+                height: 67px;
                 transform: translateY(-30px);
                 animation: progress 0.4s 100ms ease-out forwards;
+                
 
                 .name-restaurant {
                     font-size: 28px;
                 }
 
                 .bloc-icone {
-                    padding-right: 15px;
+                    display: flex;
 
                     .icone1 {
                         font-size: 25px;
@@ -577,6 +580,7 @@ body {
                         margin-bottom: 15px;
                         cursor: pointer;
                         overflow: hidden;
+                        opacity: 0;
 
                         .btn_text {
                             white-space: nowrap;
@@ -669,39 +673,35 @@ body {
 
 /* desktop */
 @media screen and (min-width: 1200px ) {
-
-    .paddrestaurant {
-        padding-left: 12%;
-        padding-right: 12%;
-    }
-
+    
     main {
         flex-direction: column;
         
         /*Page d'accueil*/
+        
         .function {
             display: flex;
             flex-direction: column;
+            max-width: 1200px;
+            margin: auto;
             .function_btn {
                 display: flex;
                 justify-content: space-between;
                 flex-wrap: wrap;
-                align-items: stretch;
     
                 .btn_choose {
                     display: flex;
-                    max-width: 1200px;
-
-                    h3 {
-                        margin-right: 20px;
-                    }
+                    width: 320px;
+                    
                 }
             }
         }
 
-        .list_restaurant {
+        .restaurant_btn {
             display: flex;
             flex-direction: column;
+            max-width: 1200px;
+            margin: auto;
       
             
             .restaurant-group {
@@ -709,10 +709,11 @@ body {
                 justify-content: space-between;
                 align-items: stretch;
                 flex-wrap: wrap;
+                margin-bottom: 50px;
                 
                 .restaurant_select {
-                    max-width: 45%;
-                    margin-bottom: 40px;
+                    max-width: 540px;
+                    margin-bottom: 20px;
                 }
             }
         
@@ -724,23 +725,42 @@ body {
             display: flex;
             flex-direction: column;
 
+            .title_menu {
+                margin-top: 32px;
+                .title-like {
+                    display: flex;
+                    justify-content: space-between;
+                    max-width: 1200px;
+                    flex-wrap: wrap;
+                    margin: auto; 
+                }
+
+            }  
+
             .menu {
                 display: flex;
                 justify-content: space-between;
                 align-items: stretch;
                 flex-wrap: wrap;
+                max-width: 1200px;
+                margin: auto;
 
                 .menu_category {
-
+                    margin: 10px;
                     .container {
-                        width: 340px;
+                        width: 380px;
                     }
                 }
             }
         }
 
-
     }
+
+    .footer-texticone {
+        width: 1200px;
+        margin: auto;
+    }
+
 
     
 
