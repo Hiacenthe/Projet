@@ -500,11 +500,8 @@ body {
             .title-like {
                 display: flex;
                 margin: 32px 10px 0;
-                opacity: 0;
                 height: 67px;
                 transform: translateY(-30px);
-                animation: progress 0.4s 100ms ease-out forwards;
-                
 
                 .name-restaurant {
                     font-size: 28px;
@@ -544,6 +541,7 @@ body {
                     .category-dishes {
                         @include apparition;
                         padding-left: 8px;
+                        opacity: 0;
                         &::after {
                             margin-top: 5px;
                             display: block;

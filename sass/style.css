@@ -460,11 +460,8 @@ body .main-bloc .main_menu {
 body .main-bloc .main_menu .title-like {
   display: flex;
   margin: 32px 10px 0;
-  opacity: 0;
   height: 67px;
   transform: translateY(-30px);
-  -webkit-animation: progress 0.4s 100ms ease-out forwards;
-          animation: progress 0.4s 100ms ease-out forwards;
 }
 body .main-bloc .main_menu .title-like .name-restaurant {
   font-size: 28px;
@@ -494,6 +491,7 @@ body .main-bloc .main_menu .menu .menu_category {
 }
 body .main-bloc .main_menu .menu .menu_category .category-dishes {
   padding-left: 8px;
+  opacity: 0;
 }
 body .main-bloc .main_menu .menu .menu_category .category-dishes:nth-child(1) {
   -webkit-animation: progress 0.2s 0.2s ease-in forwards;
