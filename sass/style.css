@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Shrikhand&display=swap");
 .title {
   font-family: "Shrikhand", cursive;
 }
@@ -199,7 +200,7 @@ body main .location i {
   padding-right: 15px;
 }
 body main .location p {
-  font-weight: 15px;
+  font-weight: 100;
   margin-right: 35px;
 }
 body main .main--txt {
